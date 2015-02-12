@@ -12,6 +12,7 @@
 
 @interface ToDoListTableViewController ()
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *trashButton;
 @property NSMutableArray *toDoItems;
 
 @end

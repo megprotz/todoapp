@@ -35,12 +35,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do List:" id="zXB-Nt-qa8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="42D-Ca-Ucd"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5ti-0w-qQe">
                             <connections>
                                 <segue destination="LgT-Kd-iCy" kind="presentation" id="ujL-Eq-ywS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="trashButton" destination="42D-Ca-Ucd" id="YGu-Fy-eKJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSA-73-7dw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
