@@ -13,11 +13,13 @@
 @interface ToDoListTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *trashButton;
+
 @property NSMutableArray *toDoItems;
 
 @end
 
 @implementation ToDoListTableViewController
+
 
 - (void) loadInitialData {
     ToDoItem *item1 = [[ToDoItem alloc] init];
@@ -46,6 +48,18 @@
     self.toDoItems = [[NSMutableArray alloc] init];
     
     [self loadInitialData];
+}
+
+/////////////my new method
+- (IBAction)removeItem:(id)sender {
+    NSMutableArray *discardedItems = [NSMutableArray array];
+    for(ToDoItem *object in self.toDoItems){
+        if(object.completed==YES){
+            [discardedItems addObject:object];
+        }
+    }
+    [self.toDoItems removeObjectsInArray:discardedItems];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
